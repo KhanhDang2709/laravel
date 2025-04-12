@@ -11,13 +11,28 @@
                             <form action="{{ route('user.postUpdateUser') }}" method="POST">
                                 @csrf
                                 <input name="id" type="hidden" value="{{$user->id}}">
-                                
                                 <div class="form-group mb-3">
                                     <input type="text" placeholder="Name" id="name" class="form-control" name="name"
                                            value="{{ $user->name }}"
                                            required autofocus>
                                     @if ($errors->has('name'))
                                         <span class="text-danger">{{ $errors->first('name') }}</span>
+                                    @endif
+                                </div>
+                                <div class="form-group mb-3">
+                                    <input type="text" placeholder="Phone" id="phone" class="form-control" name="phone"
+                                           value="{{ $user->phone }}"
+                                           required autofocus>
+                                    @if ($errors->has('phone'))
+                                        <span class="text-danger">{{ $errors->first('phone') }}</span>
+                                    @endif
+                                </div>
+                                <div class="form-group mb-3">
+                                    <input type="text" placeholder="Address" id="address" class="form-control" name="address"
+                                           value="{{ $user->address }}"
+                                           required autofocus>
+                                    @if ($errors->has('address'))
+                                        <span class="text-danger">{{ $errors->first('address') }}</span>
                                     @endif
                                 </div>
                                 <div class="form-group mb-3">
